@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- styling -->
+    <link rel="stylesheet" href="style.css">
+    <!-- library logic -->
+    <script src="./script.js" defer></script>
+    <!-- tailwind -->
+    <script src="https://cdn.tailwindcss.com" defer></script>
+    <script
+      src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"
+      defer
+    ></script>
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tienne:wght@900&display=swap" rel="stylesheet"> 
+
+    <title>Document</title>
+  </head>
+  <body
+    class="h-screen w-screen flex justify-center items-center px-0 py-0 mx-0-my-0"
+  >
+    <div
+    
+      class="h-1/2 w-1/2 relative flex flex-row bg-gray-200 print outline-4 outline-rose-600 gap-3"
+    >
+      <div class="absolute top-1 left-1 " id="addBook">
+        <button onclick="document.querySelector('#form').style = 'visibility: ;'; document.querySelector('#addBook').style.visibility = 'hidden';">Add book</button>
+      </div>
+      <div
+      id="form"
+        class="h-100 w-2/5 flex flex-col justify-around  outline-4 outline-rose-600 px-3 bg-gray-200" style="visibility:hidden;"
+      >
+        <input
+          placeholder="Title"
+          type="text"
+          name="title"
+          id="title"
+          class="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
+        />
+        <input
+          placeholder="Author"
+          type="text"
+          name="author"
+          id="author"
+          class="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
+        />
+        <input
+          placeholder="# of pages"
+          type="number"
+          name="pages"
+          id="pages"
+          class="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
+        />
+        <div class="">
+          <label
+            for="default-toggle"
+            class="inline-flex relative items-center cursor-pointer"
+          >
+            <input
+              type="checkbox"
+              value=""
+              id="default-toggle"
+              class="sr-only peer"
+            />
+
+            <div
+              class="w-11 h-6 bg-gray-200 peer-focus:outline-none dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"
+            ></div>
+            <span
+              class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-600"
+              >read?</span
+            >
+          </label>
+        </div>
+        <button
+          onclick="
+          addBookToLibrary();"
+          id="submit"
+          type="submit"
+          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        >
+          Submit
+        </button>
+      </div>
+      <div
+        id="Library"
+        class="bg-white h-full w-full flex flex-col py-3 items-center overflow-auto gap-2 snap-y"
+        style = "scrollbar-width: none;"
+      >
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
